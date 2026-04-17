@@ -8,7 +8,7 @@ export default function LandingPage() {
       <div className="landing-bg" aria-hidden="true" />
       <div className="card landing-card landing-hero">
         <div className="brand-logo">DM</div>
-        <h1>Build a healthier routine with Diet Manager</h1>
+        <h1>NeutriGuide-Personalized Diet Planner</h1>
         <p>
           Personalized plans, daily meal tracking, and progress insights in one
           simple dashboard.
