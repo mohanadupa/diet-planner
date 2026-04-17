@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { apiRequest } from "../api/client";
 import { useAppContext } from "../context/AppContext";
 
 export default function SettingsPage() {
-  const { user, theme, setTheme } = useAppContext();
+  const { user, theme, setTheme, setUser } = useAppContext();
   const [profile, setProfile] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function loadUser() {
@@ -18,6 +20,14 @@ export default function SettingsPage() {
   const changeTheme = async (newTheme) => {
     setTheme(newTheme);
     await apiRequest("/user/theme", "PUT", { userId: user.userId, theme: newTheme });
+  };
+
+  const logout = () => {
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("authUser");
+    localStorage.removeItem("dietPlanMeta");
+    setUser(null);
+    navigate("/login", { replace: true });
   };
 
   return (
@@ -48,6 +58,12 @@ export default function SettingsPage() {
           onClick={() => changeTheme("dark")}
         >
           Dark
+        </button>
+      </div>
+
+      <div className="settings-actions">
+        <button className="btn-danger" type="button" onClick={logout}>
+          Logout
         </button>
       </div>
     </div>

@@ -173,11 +173,42 @@ body {
   background: transparent;
   border-radius: 10px;
   padding: 10px 12px;
+  color: #0f172a;
 }
 
 .segmented button.is-active {
   background: #2563eb;
   color: #ffffff;
+}
+
+.theme-dark .segmented {
+  background: rgba(15, 23, 42, 0.7);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.theme-dark .segmented button {
+  color: #e5e7eb;
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: #ffffff;
+  border-color: #ef4444;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+.settings-actions button {
+  width: auto;
+  min-width: 180px;
 }
 
 .bmi-card {
