@@ -1,0 +1,3 @@
+-- Baseline migration placeholder.
+-- You already created the schema manually in MySQL Workbench.
+-- Flyway baseline-on-migrate is enabled, so this keeps versioning consistent.
