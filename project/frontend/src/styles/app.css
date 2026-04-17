@@ -135,6 +135,86 @@ body {
   gap: 10px;
 }
 
+.health-form {
+  width: min(760px, 96vw);
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.field-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 6px;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.segmented button {
+  margin-top: 0;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.segmented button.is-active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.bmi-card {
+  background: #eff6ff;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+  border-radius: 12px;
+  padding: 12px;
+  align-content: start;
+}
+
+.bmi-value {
+  display: grid;
+  gap: 6px;
+}
+
+.bmi-value strong {
+  font-size: 28px;
+  line-height: 1.1;
+  color: #1e3a8a;
+}
+
+.bmi-hint {
+  font-size: 12px;
+  color: #475569;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.form-actions button {
+  width: auto;
+  min-width: 220px;
+}
+
 .section-heading {
   margin-bottom: 8px;
 }
@@ -375,5 +455,20 @@ button:disabled {
 
   .sidebar {
     width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .form-actions button {
+    width: 100%;
+    min-width: 0;
   }
 }

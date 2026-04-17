@@ -15,7 +15,9 @@ export default function LoginPage() {
     try {
       const data = await apiRequest("/auth/login", "POST", form);
       localStorage.setItem("authToken", data.token);
-      setUser(data);
+      const userPayload = { userId: data.userId, fullName: data.fullName, email: data.email };
+      localStorage.setItem("authUser", JSON.stringify(userPayload));
+      setUser(userPayload);
       navigate("/health");
     } catch (err) {
       setError(err.message);

@@ -15,7 +15,9 @@ export default function SignupPage() {
     try {
       const data = await apiRequest("/auth/signup", "POST", form);
       localStorage.setItem("authToken", data.token);
-      setUser(data);
+      const userPayload = { userId: data.userId, fullName: data.fullName, email: data.email };
+      localStorage.setItem("authUser", JSON.stringify(userPayload));
+      setUser(userPayload);
       navigate("/health");
     } catch (err) {
       setError(err.message);
